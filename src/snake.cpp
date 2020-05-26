@@ -11,7 +11,7 @@ void Snake::SetTail(Position &pos) { snake_.back() = pos;}
 void Snake::AddPos(Position pos) {
     auto s_size = snake_.size();
     snake_.emplace_back(pos);
-    if( s_size == snake_.size()){std::cout << "ERROR: Snake size " << std::endl;}
+    if( s_size == snake_.size()){ std::cout << "ERROR: Snake size " << std::endl;}
 }
 Position Snake::GetHead() const {return snake_.front();};
 Position Snake:: GetTail() const {return snake_.back();}
@@ -23,8 +23,8 @@ bool Snake::Update(Position &pos, int& free_snake) {
     auto hit = std::any_of(snake_.begin()+1, snake_.end(),[&temp_head](auto it){return it.isEqual(temp_head);} );
     if(hit){
         free_snake = 0;
-    return false;}
-    //player.GameOver();info.SetInfo("Game Over");} set palyer in controller to active = false;
+        return false;
+    }
 
     // update body
     for( int i = snake_.size()-1; i > 0; --i){

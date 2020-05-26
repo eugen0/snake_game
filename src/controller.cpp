@@ -19,22 +19,22 @@ void SetAppleRandomPos(Apple& apple){
 }
 
 // put Apple on board
-void PlaceAppleOnBoard(Apple& apple, Board& board){
+void PlaceAppleOnBoard(Apple& apple, Board& board, InfoBox& info){
     if(board.IsEmptyPosition(apple.getPosition())){
 
         //if empty as occupied pos on board;
         board.OccupyPosition(apple.getPosition());
     }else{
-        std::cout << "Was an error with random" << std::endl;
+        info.SetInfo("Was an error with random");
         SetAppleRandomPos(apple);
-        PlaceAppleOnBoard(apple, board);
+        PlaceAppleOnBoard(apple, board, info);
     }
 }
 
 // put snake on boards
-void PlaceSnakeOnBord(std::vector<Position> snake, Board& board){
+void PlaceSnakeOnBord(std::vector<Position> snake, Board& board, InfoBox& info){
     //not empty
-    if(snake.empty()) std::cout<<"ERROR empty snake"<<std::endl;
+    if(snake.empty()) info.SetInfo("ERROR empty snake");
     for(auto& i: snake){
         if(board.IsEmptyPosition(i)) board.OccupyPosition(i);
     }
@@ -76,16 +76,14 @@ bool BorderHit(Board& board, Snake& snake){
  void Controller::PlayGame() {
      //// main game loop
      while( player.isActive()){
-         std::cout << "In teh main game loop" << std::endl;
-
          ////  load infoBord
          info.SetInfo("Eat the apple but dont't hit the walls and yourself.Use the keyboard W,S,A,D to move towards the apple or press space to quit");
 
          /// place snake on board
-         PlaceSnakeOnBord(snake.GetSnakePositions(), board);
+         PlaceSnakeOnBord(snake.GetSnakePositions(), board, info);
 
          /// place apple on board
-         PlaceAppleOnBoard(apple, board);
+         PlaceAppleOnBoard(apple, board, info);
 
          ///Rendere Board and InfoBox;
      render.RenderBoard(board.GetState());
@@ -118,8 +116,6 @@ bool BorderHit(Board& board, Snake& snake){
                  return;
              }
          }
-
-
      }while(!valid_move);
 
 
@@ -149,16 +145,14 @@ bool BorderHit(Board& board, Snake& snake){
 
      // clear board;
      board.ClearBoard();
-    // clear info
-    //info.ClearInfo();
+
 
      }
     render.RenderBoard(board.GetState());
-    std::cout << "Outside main loop" <<std::endl;
-     //info.ClearInfo();
-     info.SetInfo(" Thank you for playing snake. Your score is: ");
-     std::cout <<player.getName() <<" score : " << player.getScore()<< std::endl;
+     info.ClearInfo();
+     info.SetInfo(" Thank you for playing snake ");
      render.RenderInfoBox(info.GetInfo());
+     sleep(1000);
 };
 
 

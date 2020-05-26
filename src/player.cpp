@@ -13,7 +13,6 @@ int Player::Move() {
     int user_key;
     while (_kbhit()) {
         user_key = _getch();
-        //std::cout << user_key << std::endl;
     }
     return user_key;
 }
