@@ -1,3 +1,0 @@
-C:/Users/Tania/CLionProjects/Snake_Game_OOP_Practice/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Tania/CLionProjects/Snake_Game_OOP_Practice/cmake-build-debug/CMakeFiles/Snake_Game_OOP_Practice.dir
-C:/Users/Tania/CLionProjects/Snake_Game_OOP_Practice/cmake-build-debug/CMakeFiles/edit_cache.dir

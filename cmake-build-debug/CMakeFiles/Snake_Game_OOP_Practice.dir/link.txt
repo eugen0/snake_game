@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Snake_Game_OOP_Practice.dir/objects.a
-C:\PROGRA~1\MinGW\bin\ar.exe cr CMakeFiles\Snake_Game_OOP_Practice.dir/objects.a @CMakeFiles\Snake_Game_OOP_Practice.dir\objects1.rsp
-C:\PROGRA~1\MinGW\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\Snake_Game_OOP_Practice.dir/objects.a -Wl,--no-whole-archive  -o Snake_Game_OOP_Practice.exe -Wl,--out-implib,libSnake_Game_OOP_Practice.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Snake_Game_OOP_Practice.dir\linklibs.rsp
