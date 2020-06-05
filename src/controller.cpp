@@ -1,8 +1,10 @@
 #include "../Controller.h"
 #include <stdlib.h>
 #include <iostream>
-#include <unistd.h>
-
+//#include <unistd.h>
+#include <io.h>
+#include <random>
+#include <windows.h>
 // user valid moves;
 Position up(-1, 0, '*');
 Position lf(0, -1, '*');
@@ -152,7 +154,7 @@ bool BorderHit(Board& board, Snake& snake){
      info.ClearInfo();
      info.SetInfo(" Thank you for playing snake ");
      render.RenderInfoBox(info.GetInfo());
-     sleep(1000);
+     Sleep(1000);
 };
 
 
