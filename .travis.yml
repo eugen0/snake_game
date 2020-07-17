@@ -1,3 +1,7 @@
 language: c++
 
-script: CmakeLists.txt
+script:
+  mkdir build
+  cd build
+  cmake ..
+  cmake --build .
